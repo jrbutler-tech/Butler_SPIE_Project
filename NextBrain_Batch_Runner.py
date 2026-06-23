@@ -99,11 +99,11 @@ def run_nextbrain(t1_path: Path, out_dir: Path, device: str, mode: str) -> bool:
     for side in ("left", "right"):
         cmd = [
             "mri_histo_atlas_segment_fireants",
-            str(t1_path),
-            str(out_dir),
-            device,
-            side,
-            mode,
+            "--i", str(t1_path),
+            "--o", str(out_dir),
+            "--device", device,
+            "--side", side,
+            "--mode", mode,
         ]
         logging.info("Running: %s", " ".join(cmd))
         result = subprocess.run(cmd, capture_output=True, text=True)
