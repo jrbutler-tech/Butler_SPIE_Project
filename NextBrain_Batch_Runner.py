@@ -104,6 +104,7 @@ def run_nextbrain(t1_path: Path, out_dir: Path, device: str, mode: str) -> bool:
             "--device", device,
             "--side", side,
             "--mode", mode,
+            "--threads", "1",
         ]
         logging.info("Running: %s", " ".join(cmd))
         result = subprocess.run(cmd, capture_output=True, text=True)
