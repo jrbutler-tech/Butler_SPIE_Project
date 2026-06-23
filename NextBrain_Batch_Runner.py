@@ -134,7 +134,7 @@ def main():
     setup_logging(args.log_file)
     state = load_state(args.state_file)
 
-    subject_dirs = sorted(p for p in args.data_dir.iterdir() if p.is_dir())
+    subject_dirs = sorted(p for p in args.data_dir.iterdir() if p.is_dir() and p.name.startswith("sub-"))
     if args.shuffle:
         import random
         random.shuffle(subject_dirs)
