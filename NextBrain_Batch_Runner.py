@@ -161,6 +161,7 @@ def main():
             logging.info("[dry-run] would process %s -> %s", sid, success_count, t1_path)
             success_count += 1
             state["success"][sid] = str(t1_path)
+            save_state(args.state_file, state)
             continue
 
         out_dir = args.output_dir / sid
