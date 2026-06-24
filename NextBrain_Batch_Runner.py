@@ -98,6 +98,7 @@ def run_nextbrain(t1_path: Path, out_dir: Path, device: str, mode: str) -> bool:
     out_dir.mkdir(parents=True, exist_ok=True)
     for side in ("left", "right"):
         cmd = [
+            "CUDA_VISIBLE_DEVICES=0",  # or "" for CPU-only
             "mri_histo_atlas_segment_fireants",
             "--i", str(t1_path),
             "--o", str(out_dir),
