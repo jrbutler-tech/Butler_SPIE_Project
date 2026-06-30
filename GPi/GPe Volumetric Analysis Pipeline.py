@@ -214,36 +214,6 @@ def plot_structure_qc(df, column, structure_name, output_dir):
     )
 
     # ---------------------------------------------------------
-    # Label lowest 10
-    # ---------------------------------------------------------
-
-    for _, row in lowest.iterrows():
-
-        ax.annotate(
-            row["subject_id"],
-            (row.name, row[column]),
-            fontsize=8,
-            rotation=45,
-            xytext=(0, 6),
-            textcoords="offset points"
-        )
-
-    # ---------------------------------------------------------
-    # Label highest 10
-    # ---------------------------------------------------------
-
-    for _, row in highest.iterrows():
-
-        ax.annotate(
-            row["subject_id"],
-            (row.name, row[column]),
-            fontsize=8,
-            rotation=45,
-            xytext=(0, 6),
-            textcoords="offset points"
-        )
-
-    # ---------------------------------------------------------
     # Mean / Median
     # ---------------------------------------------------------
 
